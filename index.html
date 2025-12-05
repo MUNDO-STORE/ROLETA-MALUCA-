@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORTEIO PACK COM MAIS 15 MIL MÚSICAS MP3 SEM VINHETAS ATUALIZADAS SE GANHAR PAGA APENAS R$4,00</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #top-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+
+        .roulette-area {
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        #roulette-display {
+            width: 250px;
+            height: 250px;
+            border: 5px solid #ffcc00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 5s ease-out;
+
+            background: conic-gradient(
+                #4CAF50 0% 16.6%,
+                #f44336 16.6% 33.3%,
+                #4CAF50 33.3% 50%,
+                #f44336 50% 66.6%,
+                #4CAF50 66.6% 83.3%,
+                #f44336 83.3% 100%
+            );
+        }
+
+        #roulette-display::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        #pointer {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid #333;
+            z-index: 20;
+        }
+
+        .segment-text {
+            position: absolute;
+            color: #fff;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .button {
+            padding: 15px 30px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            margin: 15px auto;
+            transition: background 0.3s;
+        }
+
+        #spin-button {
+            background-color: #ffcc00;
+            color: #333;
+            font-weight: bold;
+        }
+
+        #spin-button:hover:not([disabled]) {
+            background-color: #e6b800;
+        }
+
+        #spin-button[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #purchase-button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            display: none;
+        }
+
+        #purchase-button:hover {
+            background-color: #45a049;
+        }
+
+        #footer-site {
+            margin-top: 40px;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div id="top-title">MUNDO STORE</div>
+
+    <h1>SORTEIO PACK COM MAIS 15 MIL MÚSICAS MP3 SEM VINHETAS ATUALIZADAS SE GANHAR PAGA APENAS R$4,00</h1>
+
+    <div class="roulette-area">
+        <div id="pointer"></div>
+
+        <div id="roulette-display">
+            <p class="segment-text" style="transform: rotate(30deg) translate(0, -90px);">PACK R$4,00</p>
+            <p class="segment-text" style="transform: rotate(90deg) translate(0, -90px);">NÃO GANHOU</p>
+            <p class="segment-text" style="transform: rotate(150deg) translate(0, -90px);">PACK R$4,00</p>
+            <p class="segment-text" style="transform: rotate(210deg) translate(0, -90px);">NÃO GANHOU</p>
+            <p class="segment-text" style="transform: rotate(270deg) translate(0, -90px);">PACK R$4,00</p>
+            <p class="segment-text" style="transform: rotate(330deg) translate(0, -90px);">NÃO GANHOU</p>
+        </div>
+
+        <p id="attempts-left">Tentativas restantes: 3</p>
+        <p id="message"></p>
+
+        <button id="spin-button" class="button">GIRAR ROLETA</button>
+    </div>
+
+    <hr>
+
+    <button id="purchase-button" class="button"
+        onclick="window.location.href='https://wa.link/xqzxuf'">
+        NÃO GANHOU!? NÃO SE PREOCUPE, FAZEMOS O PACK PARA VOCÊ POR APENAS R$8,00! CLICK AQUI PARA COMPRAR PELO WHATSAPP!
+    </button>
+
+    <p id="footer-site">
+        VENHA VISITAR NOSSO SITE:
+        <br>
+        <a href="https://mundo-dj-packs.lumi.ing/" target="_blank">
+            https://mundo-dj-packs.lumi.ing/
+        </a>
+    </p>
+
+</div>
+
+<script>
+    const spinButton = document.getElementById('spin-button');
+    const rouletteDisplay = document.getElementById('roulette-display');
+    const attemptsLeftDisplay = document.getElementById('attempts-left');
+    const messageDisplay = document.getElementById('message');
+    const purchaseButton = document.getElementById('purchase-button');
+
+    let attempts = 3;
+    let blockTime = 5 * 60;
+    let countdownInterval = null;
+
+    function resetRotation() {
+        rouletteDisplay.style.transition = "none";
+        rouletteDisplay.style.transform = "rotate(0deg)";
+        void rouletteDisplay.offsetWidth;
+        rouletteDisplay.style.transition = "transform 5s ease-out";
+    }
+
+    function startCountdown() {
+        let remaining = blockTime;
+
+        spinButton.disabled = true;
+
+        countdownInterval = setInterval(() => {
+            let minutes = Math.floor(remaining / 60);
+            let seconds = remaining % 60;
+
+            spinButton.textContent = `Aguarde ${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            remaining--;
+
+            if (remaining < 0) {
+                clearInterval(countdownInterval);
+                spinButton.disabled = false;
+                spinButton.textContent = "GIRAR ROLETA";
+                attempts = 3;
+                attemptsLeftDisplay.textContent = "Tentativas restantes: 3";
+            }
+        }, 1000);
+    }
+
+    function spinRoulette() {
+
+        if (attempts <= 0) return;
+
+        resetRotation();
+
+        messageDisplay.textContent = "Girando...";
+        spinButton.disabled = true;
+
+        attempts--;
+        attemptsLeftDisplay.textContent = `Tentativas restantes: ${attempts}`;
+
+        purchaseButton.style.display = "none";
+
+        const win = Math.random() < 0.5;
+
+        let segmentAngle;
+        if (win) {
+            const winAngles = [0, 120, 240];
+            segmentAngle = winAngles[Math.floor(Math.random() * winAngles.length)] + Math.random() * 50;
+        } else {
+            const loseAngles = [60, 180, 300];
+            segmentAngle = loseAngles[Math.floor(Math.random() * loseAngles.length)] + Math.random() * 50;
+        }
+
+        // 🔥 GIROS AUMENTANDO A CADA TENTATIVA
+        // Tentativa 1 → 18 voltas
+        // Tentativa 2 → 15 voltas
+        // Tentativa 3 → 12 voltas
+        let baseRotations = 12 + (3 * (3 - attempts));
+
+        const totalRotation = 360 * baseRotations + (360 - segmentAngle);
+
+        setTimeout(() => {
+            rouletteDisplay.style.transform = `rotate(${totalRotation}deg)`;
+        }, 50);
+
+        setTimeout(() => {
+
+            if (win) {
+                messageDisplay.textContent = "PARABÉNS! VOCÊ GANHOU O PACK POR R$4,00!";
+                window.location.href = "https://wa.link/um3qt6";
+                return;
+            }
+
+            messageDisplay.textContent = "Você não ganhou.";
+
+            if (attempts <= 0) {
+                purchaseButton.style.display = "block";
+                startCountdown();
+            } else {
+                spinButton.disabled = false;
+                spinButton.textContent = "GIRAR ROLETA";
+            }
+
+        }, 5000);
+
+    }
+
+    spinButton.addEventListener("click", spinRoulette);
+</script>
+
+</body>
+</html>
